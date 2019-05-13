@@ -1,5 +1,7 @@
 import '../html/index.html'
 import './pubsub'
+import './carousel'
+import './humburger'
 
 import '../sass/main.sass'
 

@@ -1,0 +1,24 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.ttf')
+  }
+}
+
+
+@include font-face('Lobster', '../fonts/Lobster/Lobster-Regular', normal)
+@include font-face('Comfort', '../fonts/Comfortaa/Comfortaa[wght]', normal)
+@include font-face('Marmelad', '../fonts/Marmelad/Marmelad-Regular', normal)
+@include font-face('Merriweather', '../fonts/Merriweather/Merriweather-Regular', normal)
+@include font-face('MerriweatherBold', '../fonts/Merriweather/Merriweather-Bold', bold)
+@include font-face('Pattaya', '../fonts/Pattaya/Pattaya-Regular', normal)
+@include font-face('RobotoSlab', '../fonts/Roboto_Slab/RobotoSlab-Regular', normal)
+@include font-face('RobotoSlabBold', '../fonts/Roboto_Slab/RobotoSlab-Bold', bold)
+@include font-face('Rubik', '../fonts/Rubik_Mono_One/RubikMonoOne-Regular', normal)
+@include font-face('Ruso', '../fonts/Russo_One/RussoOne-Regular', normal)
+@include font-face('TenorSans', '../fonts/Tenor_Sans/TenorSans-Regular', normal)
+@include font-face('Yanone', '../fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular', normal)
+@include font-face('YanoneBold', '../fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Bold', bold)
+@include font-face('Yeseva', '../fonts/Yeseva_One/YesevaOne-Regular', normal)
