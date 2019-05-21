@@ -1,4 +1,5 @@
 $ac-color: #fd33bd
+$ac-color2: #fd5829
 $w-color: #fff
 $dop-color: rgba(255, 255, 255, .3)
 $text-color: rgba(#000, 0.9)
@@ -10,29 +11,37 @@ $text-color: rgba(#000, 0.9)
   margin: 0
   padding: 0
   box-sizing: border-box
-  font-family: Marmelad
+  font-family: RobotoSlabBold
 a
   list-style: none
   text-decoration: none
   color: inherit
-
+  font-family: Comfort
 h1
-  font-size: 64px
+  font-size: 32px
+  margin-top: 100px
+  text-transform: uppercase
+  span
+    color: $ac-color2
+    font-family: RobotoSlabBold
+h2
+  font-size: 48px
   color: $ac-color
   line-height: 1.4
   opacity: 0
   max-width: 1170px
-  margin-bottom: 50px
-  font-family: MerriweatherBold
+  margin-bottom: 20px
+  font-family: RobotoSlab
   text-transform: uppercase
-h2
-  text-transform: uppercase
-  font-family: MerriweatherBold
+  span
+    color: $ac-color2
+    font-family: RobotoSlabBold
 p
-  font-family: Marmelad
+  font-family: Comfort
 .posr
   position: relative
-
+.carouseItemBox
+  height: 100vh
 body
   height: 100vh
   width: 100vw
@@ -56,6 +65,10 @@ nav
   &.active
     opacity: 1
     left: 0
+.phone
+  position: relative
+  display: block !important
+  top: 2px
 .nav
   list-style: none
   display: flex
@@ -66,7 +79,7 @@ nav
     //background-color: $ac-color
   .item
     left: -50px
-    padding: 20px 45px 20px 35px
+    padding: 18px 45px 15px 35px
     line-height: 0.8
     text-transform: uppercase
     font-size: 14px
@@ -98,6 +111,7 @@ nav
   svg
     height: 35px
 .cont
+  height: 100%
   max-width: 1170px
   margin: 0 auto
 .one, .two, .three
@@ -124,25 +138,23 @@ nav
   background-color: #fafafa
 .navScroll
   position: fixed
-  top: 50%
-  right: 30px
-  //right: 0
+  top: 0
+  right: 0
+  width: 3px
+  /* transform: translateY(-50%); */
   display: flex
   flex-direction: column
   cursor: pointer
   z-index: 10
+  height: 100vh
   .scrollClick.active
     position: relative
     //font-size: 18px
     background-color: $ac-color
   .scrollClick
-    color: $w-color
+    width: 100%
+    background-color: $w-color
     transition: 0.5s ease-in-out
-    font-size: 12px
-    line-height: 0.8
-    padding: 10px 12px
-    &:hover
-      background-color: $ac-color
 .scrollBox
   font-size: 0
   > div
@@ -157,12 +169,16 @@ nav
   width: 20px
   background-color: red
 .rightDotsBox
+  height: 100%
   box-shadow: inset 0 0 3px rgba(#000, 0.1)
   position: relative
   background-color: rgba(#000, .1)
-  border-radius: 5px
   overflow: hidden
   //transform: translateY(33.3%);
+.rightDotsAbs
+  background-color: $ac-color
+  position: absolute
+  width: 100%
 
 .linkHome
   position: absolute
@@ -195,7 +211,7 @@ nav
     width: 100vw
     height: 100vh
 .carouselDots
-  z-index: 10
+  z-index: 12
   position: absolute
   top: 30px
   left: 50%
@@ -222,8 +238,9 @@ nav
   display: flex
   height: 100%
   width: 100%
-  align-items: flex-start
-  padding-left: 15%
+  text-align: center
+  align-items: center
+  //padding-left: 15%
   flex-direction: column
   justify-content: center
   background: rgba(0,0,0,.8)
@@ -231,15 +248,35 @@ nav
     position: relative
     opacity: 0
     font-size: 28px
-    padding: 0 30px 10px 0px
+    padding: 0
     text-shadow: 0 1px 3px rgba(#000, 0.4)
     color: #fff
+.linkTo
+  position: relative
+  padding: 10px 40px
+  border-radius: 5px
+  opacity: 0
+  font-size: 20px
+  margin-top: 80px
+  background-color: $ac-color
+  color: $w-color
+.carouseItemBox
+  img
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: -1
 .carouselItem.active .carouselText
-    h1
+    h2
       position: relative
       animation: animationHeaderText 0.5s cubic-bezier(0,.73,.47,1) 1s forwards
     p
       animation: animationHeaderBText 0.5s cubic-bezier(0,.73,.47,1) 1.5s forwards
+    a
+      animation: animationLink 0.5s cubic-bezier(0,.73,.47,1) 2s forwards
+      &:hover
+        animation: animationLink 0.5s cubic-bezier(0,.73,.47,1) 2s forwards, hoverAnimation 0.5s ease-in-out forwards
 @keyframes animationHeaderText
   0%
     top: -100px
@@ -256,6 +293,20 @@ nav
     left: 0
     opacity: 1
 
+@keyframes animationLink
+  0%
+    bottom: -50px
+    opacity: 0
+  100%
+    bottom: 0
+    opacity: 1
+
+@keyframes hoverAnimation
+  0%
+    box-shadow: 0 0 0 0px rgba($ac-color, 0.8)
+  100%
+    box-shadow: 0 0 0 10px rgba($ac-color, 0)
+
 
 // HAMBURGER
 input
@@ -267,6 +318,7 @@ label
   width: 100%
   height: 100%
   top: -5px
+  z-index: 12
   path
     fill: none
     stroke: $ac-color
@@ -374,3 +426,4 @@ label
 
 
 @import fonts
+@import media

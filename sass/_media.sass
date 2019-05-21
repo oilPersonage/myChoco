@@ -1,0 +1,92 @@
+@media screen and (max-width: 1366px)
+  h1
+    font-size: 40px
+  .carouselText
+    padding-bottom: 0
+    padding-right: 100px
+    p
+      font-size:  18px
+@media screen and (max-width: 988px)
+  .carouselItem.active .carouselText
+    h1
+      top: 0
+    p
+      left: 0
+    h1, p
+      opacity: 1
+      animation: none
+
+  .carouseItemBox
+    img
+      height: 100vh
+  h1
+    font-size: 32px
+  .carouselText
+    text-align: center
+    align-items: center
+    padding-right: 7%
+    padding-left: 7%
+    p
+      font-size:  18px
+      padding-right: 0
+  .linkHome
+    right: 50%
+    transform: translateX(50%)
+  .carouselDots
+    top: 70px
+  .navScroll
+    right: 0
+  .menu--1
+    left: auto
+    right: 0
+    z-index: 13
+  nav
+    background-color: #000
+    left: auto
+    border-radius: 0
+    z-index: 12
+    right: -100%
+    &.active
+      left: auto
+      right: 0
+      width: 100%
+  .nav
+    justify-content: center
+    .item
+      left: auto
+      right: -50px
+    a
+      text-align: center
+  .menu
+    position: relative
+    z-index: 13
+@media screen and (max-width: 600px)
+  .carouselDotItem > div
+    width: 5px
+    height: 5px
+  h1
+    font-size: 24px
+  .carouselText
+    text-align: center
+  .linkHome
+    left: 0
+    padding-left: 25px
+    right: 0
+    transform: none
+    display: flex
+    a
+      order: 0
+    a
+      &:first-child
+        order: 1
+  .svgInst, .svgVk
+    margin-left: 0
+    margin-right: 10px
+  .phone
+    position: absolute
+    top: 1px
+    left: 50%
+    transform: translateX(-50%)
+    font-size: 18px
+  label
+    top: -9px

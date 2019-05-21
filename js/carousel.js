@@ -1,16 +1,15 @@
 import {hideMenu} from './pubsub'
 const carouselItem = document.querySelectorAll('.carouselItem')
 const carouselDots = document.querySelector('.carouselDots')
-let from = 0
-let interval;
+window.fromDot = 0
+window.interval;
 
 const setZIndex = (index) => {
     // index - Должен быть виден
-    carouselItem[from].style.zIndex = 10
+    carouselItem[window.fromDot].style.zIndex = 10
     carouselItem[index - 1].style.zIndex = 9
     for(let l = 0; l < carouselItem.length; l++) {
-        console.log(index - 1 !== l, from !== l, )
-        if (index - 1 !== l && from !== l) {
+        if (index - 1 !== l && window.fromDot !== l) {
             carouselItem[l].style.zIndex = 1
         }
     }
@@ -18,32 +17,33 @@ const setZIndex = (index) => {
 }
 // setZIndex(1)
 const animationCarousel = (index) => {
-    const dir = from < index
-    const i = from
+    const dir = window.fromDot < index
+    const i = window.fromDot
     setZIndex(index)
-    TweenLite.to(carouselItem[i], 0.5, {y: dir ? -window.innerWidth : window.innerWidth, opacity: 0, ease: Power2.easeIn, onComplete: () => {
-        TweenLite.to(carouselItem[i], .01, {y: 0, opacity: 1, zIndex: 1})
+    TweenLite.to(carouselItem[i], 0.5, {x: dir ? -window.innerWidth : window.innerWidth, opacity: 0, ease: Power2.easeIn, onComplete: () => {
+        TweenLite.to(carouselItem[i], .01, {x: 0, opacity: 1, zIndex: 1})
         carouselItem[i].classList.remove('active')
     }})
     carouselItem[index -1].classList.add('active')
-    from = index -1
+    window.fromDot = index -1
 }
 window.intervalAnim = () => {
-    if (window.from !== 1) return
-    interval = setTimeout(() => {
-        if (from + 1 === carouselItem.length) {
+    window.interval = setTimeout(() => {
+        if (window.fromDot + 1 === carouselItem.length) {
+          if (window.from !== 1) return
             dotClick(1)
         } else {
-            dotClick(from + 2)
+          if (window.from !== 1) return
+            dotClick(window.fromDot + 2)
         }
     }, 6000)
 }
 
-// window.intervalAnim()
+window.intervalAnim()
 const dotClick = (index) => {
     hideMenu()
     clearTimeout(interval)
-    // window.intervalAnim()
+    window.intervalAnim()
     const item = document.querySelectorAll('.carouselDotItem')
     for (let d = 0; d < item.length; d++) {
         if (d === index - 1) {
@@ -66,3 +66,5 @@ for (let i=0; i < carouselItem.length; i++) {
     }
     carouselDots.appendChild(dot)
 }
+
+export {dotClick}
