@@ -2,7 +2,7 @@ import {hideMenu} from './pubsub'
 
 let dotClick;
 
-if (document.querySelector('.body')) {
+if (document.querySelector('#home')) {
 const carouselItem = document.querySelectorAll('.carouselItem')
 const carouselDots = document.querySelector('.carouselDots')
 window.fromDot = 0

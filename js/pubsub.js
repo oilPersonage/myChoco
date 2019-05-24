@@ -4,7 +4,7 @@ import {dotClick, from} from './carousel'
 
 let hideMenu;
 
-if (document.querySelector('.body')) {
+if (document.querySelector('#home')) {
   const body = document.querySelector('body')
   const carouselItem = document.querySelectorAll('.carouselItem')
   const scrollBox = document.querySelector('.scrollBox')
