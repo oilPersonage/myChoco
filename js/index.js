@@ -1,7 +1,9 @@
 import '../html/index.html'
+import '../html/photograph.html'
 import './pubsub'
 import './carousel'
 import './humburger'
+import './photo'
 
 import '../sass/main.sass'
 

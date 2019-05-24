@@ -4,8 +4,9 @@ const hamb = document.querySelector('#hamburger')
 window.nav = document.querySelector('nav')
 const navItems = document.querySelectorAll('.nav .item')
 const width = document.body.clientWidth < 988
+
 const animationMenu = (dir) => {
-    const d = width ? -50 : 50
+  const d = width ? -50 : 50
   const move = dir ? d : 0
     for(let i = 0; i < navItems.length; i++) {
         TweenLite.to(navItems[i], 0.5, {x: move, delay: i / navItems.length / 4});
@@ -13,6 +14,7 @@ const animationMenu = (dir) => {
 }
 
 hamb.addEventListener('click', (e) => {
+  console.log('123')
     e.stopPropagation()
     if (window.nav.classList.contains('active')) {
         animationMenu(0)

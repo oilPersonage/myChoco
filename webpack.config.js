@@ -85,6 +85,11 @@ const config = {
       filename: 'index.html',
       // favicon: './html/images/favicon.ico',
     }),
+    new HtmlWebpackPlugin({
+      template: './html/photograph.html',
+      filename: 'photograph.html',
+      // favicon: './html/images/favicon.ico',
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
