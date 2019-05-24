@@ -13,13 +13,10 @@ if (document.querySelector('#photograph')) {
 
   const changeArrow = (arr) => {
     arr.forEach((item, index) => {
-      console.log({item})
       if (item) {
-        showArrowArr[index].style.opacity = 1
-        showArrowArr[index].style.zIndex = 3
+        showArrowArr[index].classList.add('active')
       } else {
-        showArrowArr[index].style.opacity = 0
-        showArrowArr[index].style.zIndex = 0
+        showArrowArr[index].classList.remove('active')
       }
     })
   }
