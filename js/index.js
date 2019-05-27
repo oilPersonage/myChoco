@@ -1,5 +1,6 @@
 import '../html/index.html'
 import '../html/photograph.html'
+import '../html/training.html'
 import './pubsub'
 import './carousel'
 import './humburger'

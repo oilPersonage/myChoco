@@ -14,15 +14,14 @@ const animationMenu = (dir) => {
 }
 
 hamb.addEventListener('click', (e) => {
-  console.log('123')
     e.stopPropagation()
     if (window.nav.classList.contains('active')) {
         animationMenu(0)
-        window.intervalAnim()
+        if (window.intervalAnim) window.intervalAnim()
         window.nav.classList.remove('active')
     } else {
         animationMenu(1)
-        clearInterval(window.interval)
+        if (window.intervalAnim) clearInterval(window.interval)
         window.nav.classList.add('active')
     }
 })

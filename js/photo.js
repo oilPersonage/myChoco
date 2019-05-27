@@ -63,7 +63,82 @@ if (document.querySelector('#photograph')) {
       current = number
       animationPhoto(current, prev)
       el.classList.add('active')
-      console.log({prev, current}, e.target.dataset)
     })
   }
+
+
+  // MOdal photo
+  const modal = document.querySelector('.modalPhoto')
+  const photoBox = document.querySelectorAll('.photoBox')
+  const imgModal = document.querySelector('.modalImg')
+  const modalImgBox = document.querySelector('.modalImgBox')
+
+  const clickImage = (e) => {
+    const {target} = e
+    const src = target.getAttribute('src')
+    const newSrc = src.replace('/small', '')
+    modal.classList.add('show')
+    imgModal.setAttribute('src', newSrc)
+  }
+
+  // let scale = 1;
+  // const wheelPhoto = (e) => {
+  //   e.preventDefault()
+  //   const dir = -e.deltaY / 1000
+  //   scale = scale + dir
+  //   if (scale < 1) scale = 1
+  //   if (scale > 3) scale = 3
+  //   imgModal.style.transform = `scale(${scale})`
+  // }
+  //
+  // modal.addEventListener('wheel', wheelPhoto)
+  //
+  // const getCoords = (elem) => {   // кроме IE8-
+  //   const box = elem.getBoundingClientRect();
+  //   return {
+  //     top: box.top,
+  //     left: box.left
+  //   };
+  // }
+  // const touchMove = (e, x, y) => {
+  //   imgModal.style.left = e.screenX - x + 'px';
+  //   imgModal.style.top = e.screenY - y + 'px';
+  // }
+  //
+  // const MouseDown = (e) => {
+  //   const coords = getCoords(imgModal);
+  //   let shiftX = e.screenX - coords.left
+  //   let shiftY = e.screenY - coords.top
+  //   imgModal.style.position = 'absolute';
+  //   imgModal.style.transition = 'none';
+  //
+  //   imgModal.onmousemove = (e) => touchMove(e, shiftX, shiftY)
+  //   imgModal.onmouseup = () => {
+  //     imgModal.onmousemove = null;
+  //     imgModal.onmouseup = null;
+  //   }
+  // }
+  //
+  // imgModal.onmousedown = MouseDown
+  // imgModal.ondragstart = () => false
+
+  modal.addEventListener('click', (e) => {
+    console.log()
+    if (e.target === modal) {
+      modal.classList.remove('show')
+      // scale = 1
+      // imgModal.style.position = 'relative'
+      // imgModal.style.left = '0'
+      // imgModal.style.transform = 'scale(1)'
+      // imgModal.style.top = '0'
+      //
+      // imgModal.onmousemove = null;
+      // imgModal.onmouseup = null;
+    }
+  })
+
+  for (let i = 0; i < photoBox.length; i++) {
+    photoBox[i].addEventListener('click', clickImage)
+  }
+
 }

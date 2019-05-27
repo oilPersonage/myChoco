@@ -36,7 +36,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { name: 'images/[name].[ext]', publicPath: '../', limit: 8192 },
+            options: { name: 'images/[path][name].[ext]', publicPath: '../', limit: 8192 },
           },
         ],
       },
@@ -88,6 +88,11 @@ const config = {
     new HtmlWebpackPlugin({
       template: './html/photograph.html',
       filename: 'photograph.html',
+      // favicon: './html/images/favicon.ico',
+    }),
+    new HtmlWebpackPlugin({
+      template: './html/training.html',
+      filename: 'training.html',
       // favicon: './html/images/favicon.ico',
     }),
     new MiniCssExtractPlugin({
