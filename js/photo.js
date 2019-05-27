@@ -1,4 +1,8 @@
-
+const clickFunction = (el, func) => {
+  for (let i = 0; i < el.length; i++) {
+    el[i].addEventListener('click', func)
+  }
+}
 
 if (document.querySelector('#photograph')) {
   const itemPhoto = document.querySelectorAll('.itemPhoto')
@@ -136,9 +140,16 @@ if (document.querySelector('#photograph')) {
       // imgModal.onmouseup = null;
     }
   })
+  clickFunction(photoBox, clickImage)
 
-  for (let i = 0; i < photoBox.length; i++) {
-    photoBox[i].addEventListener('click', clickImage)
+  const linkTo = document.querySelectorAll('[data-scroll]')
+
+
+  const clickToScroll = (e) => {
+    const {scroll} = e.target.dataset
+    document.querySelector(scroll).scrollIntoView({block: "start", behavior: "smooth"})
   }
+
+  clickFunction(linkTo, clickToScroll)
 
 }

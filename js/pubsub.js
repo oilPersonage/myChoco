@@ -68,7 +68,6 @@ if (document.querySelector('#home')) {
       inputHamb.click()
       animationMenu(0)
     }
-    console.log(index <= 0 || index === undefined)
     if (index <= 0 || index === undefined) {
       if (width) {
         menu.style.background = 'rgba(0, 0, 0, 1)'

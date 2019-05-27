@@ -55,6 +55,9 @@ h2
     font-family: RobotoSlabBold
 p
   font-family: Comfort
+
+.mt2
+  margin-top: 20px
 .posr
   position: relative
 .carouseItemBox
@@ -198,7 +201,7 @@ nav
   width: 100%
 
 .linkHome
-  position: absolute
+  position: fixed
   top: 20px
   transition-duration: 0.5s
   //font-family: RobotoSlab
@@ -693,9 +696,9 @@ label
 .trainingGrid
   padding: 5px
   display: grid
-  grid-template-columns: 2fr 2fr 1fr 1fr 2fr
-  grid-template-rows: 1fr 1fr 2fr
-  grid-template-areas: 'a b c c c' 'a d c c c' 'e e l k m'
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr 1fr 1fr
+  grid-template-areas: 'a b c c' 'a d c c' 'e e l m' 'e e k m'
   grid-column-gap: 5px
   grid-row-gap: 5px
   width: 100vw
@@ -703,10 +706,17 @@ label
 
 .a
   grid-area: a
+  .extraText
+    .title
+      text-align: center
+      width: 100%
   .bgImage
     background: linear-gradient( rgba(0, 149, 224, 0.74), transparent ), url('../img/training/1.jpg') no-repeat center
 .b
   grid-area: b
+  .extraText
+    .title
+      font-size: 18px !important
   .bgImage
     background: linear-gradient(transparent, transparent ), url('../img/training/3.jpg') no-repeat center
 .c
@@ -727,6 +737,10 @@ label
     background:  linear-gradient( rgba(224, 0, 137, 0.74), transparent ), url('../img/training/2.jpg') no-repeat center
 .k
   grid-area: k
+  .extraText
+    .title
+      text-align: left !important
+      font-size: 18px !important
   .bgImage
     background:  linear-gradient( rgba(0, 149, 224, 0.74), transparent ), url('../img/training/2.jpg') no-repeat center
 .m
@@ -737,11 +751,10 @@ label
 .a, .b, .c, .d, .e, .l, .k, .m
   position: relative
   overflow: hidden
-  cursor: pointer
   .extraText
     position: absolute
     display: flex
-    align-items: center
+    align-items: flex-start
     flex-direction: column
     justify-content: flex-start
     z-index: 1
@@ -751,18 +764,17 @@ label
     color: #000
     height: 100%
     transition: 0.3s ease
-    background-color: rgba(255,255,255,.95)
+    background-color: rgba(255,255,255,1)
     padding: 30px
     .showPhoto
       color: #fff
-      margin: 20px auto 0
+      margin: 20px 0
     .title
       text-transform: uppercase
       margin-top: 0
       color: $ac-color
       margin-bottom: 30px
     .text
-      margin: 0 auto
       max-width: 500px
   &:hover
     > .title
