@@ -3,15 +3,12 @@ $ac-color2: #fd5829
 $w-color: #fff
 $dop-color: rgba(255, 255, 255, .3)
 $text-color: rgba(#000, 0.9)
-//Lobster, Comfort, Marmelad - bottom te,
-//  Merriweather, MerriweatherBold - good,
-//  Pattaya, RobotoSlabBold - good, RobotoSlab,
-//  Rubik, Ruso - alay good, TenorSans, Yanone, YanoneBold, Yeseva - good
+
 
 // CUSTOM SCROLL
 ::-webkit-scrollbar
   width: 3px
-
+  height: 0
 /* Track */
 ::-webkit-scrollbar-track
   background: #000
@@ -640,11 +637,11 @@ label
   column-count: 5
   .item
     max-width: 100%
-    margin-bottom: 3px
+    border-bottom: 3px solid #000
     height: calc(100% / 5 - 5px)
     width: 100%
     overflow: hidden
-    cursor: pointer
+    cursor: zoom-in
     img
       width: 100%
       transform: scale(1.1)
@@ -675,10 +672,10 @@ label
   height: 100%
   background-color: rgba(0,0,0,0)
   transition: 0.3s ease
+  cursor: zoom-out
   img
-    cursor: grabbing
     transition: 0.3s ease
-    height: 10%
+    height: 30%
     opacity: 0
   &.show
     background-color: rgba(0,0,0,0.9)
@@ -705,48 +702,160 @@ label
   height: 100vh
 
 .a
+  > .title
+    animation: animA 3s ease-out
+  &:hover
+    .extraText
+      left: 0
   grid-area: a
   .extraText
+    left: -100%
+    bottom: 0
     .title
       text-align: center
       width: 100%
   .bgImage
-    background: linear-gradient( rgba(0, 149, 224, 0.74), transparent ), url('../img/training/1.jpg') no-repeat center
+    background: linear-gradient( rgba(0, 149, 224, 0.74), rgba(0, 149, 224, 0.74) ), url('../img/training/1.jpg') no-repeat center
 .b
   grid-area: b
+  > .title
+    animation: animB 3s ease-out
+  &:hover
+    .extraText
+      top: 0
   .extraText
+    top: -100%
     .title
       font-size: 18px !important
   .bgImage
-    background: linear-gradient(transparent, transparent ), url('../img/training/3.jpg') no-repeat center
+    background: linear-gradient(rgba(226, 0, 0, 0.74), rgba(226, 0, 0, 0.74)), url('../img/training/3.jpg') no-repeat center
 .c
   grid-area: c
+  > .title
+    animation: animC 3s ease-out
+  &:hover
+    .extraText
+      left: 0
+  .extraText
+    left: -100%
   .bgImage
-    background: linear-gradient( rgba(231, 255, 0, 0.74), transparent ), url('../img/training/4.jpg') no-repeat center
+    background: linear-gradient(rgba(179, 173, 0, 0.74), rgba(179, 173, 0, 0.74)), url('../img/training/4.jpg') no-repeat center
 .d
+  > .title
+    animation: animD 3s ease-out
+  &:hover
+    .extraText
+      bottom: 0
+  .extraText
+    bottom: -100%
   .bgImage
-    background:  linear-gradient( rgba(145, 0, 224, 0.74), transparent ), url('../img/4.jpg') no-repeat center
+    background:  linear-gradient(rgba(113, 42, 152, 0.74), rgba(123, 40, 169, 0.74)), url('../img/4.jpg') no-repeat center
   grid-area: d
 .e
+  > .title
+    animation: animE 3s ease-out
+  &:hover
+    .extraText
+      left: 0
+  .extraText
+    left: -100%
   grid-area: e
   .bgImage
-    background:  linear-gradient( rgba(255, 126, 39, 0.88), transparent ), url('../img/training/2.jpg') no-repeat center
+    background:  linear-gradient( rgba(255, 126, 39, 0.88), rgba(255, 126, 39, 0.88) ), url('../img/training/2.jpg') no-repeat center
 .l
+  > .title
+    animation: animL 3s ease-out
+  &:hover
+    .extraText
+      top: 0
+  .extraText
+    top: -100%
   grid-area: l
   .bgImage
-    background:  linear-gradient( rgba(224, 0, 137, 0.74), transparent ), url('../img/training/2.jpg') no-repeat center
+    background:  linear-gradient( rgba(224, 0, 137, 0.74), rgba(224, 0, 137, 0.74) ), url('../img/training/2.jpg') no-repeat center
 .k
   grid-area: k
+  > .title
+    animation: animK 3s ease-out
+  &:hover
+    .extraText
+      bottom: 0
   .extraText
+    bottom: -100%
     .title
       text-align: left !important
       font-size: 18px !important
   .bgImage
-    background:  linear-gradient( rgba(0, 149, 224, 0.74), transparent ), url('../img/training/2.jpg') no-repeat center
+    background:  linear-gradient( rgba(0, 149, 224, 0.74), rgba(0, 149, 224, 0.74) ), url('../img/training/2.jpg') no-repeat center
 .m
+  > .title
+    animation: animM 3s ease-out
   grid-area: m
+  &:hover
+    .extraText
+      left: 0
+  .extraText
+    left: -100%
   .bgImage
-    background:  linear-gradient( rgba(226, 0, 0, 0.74), transparent ), url('../img/training/2.jpg') no-repeat center
+    background:  linear-gradient( rgba(226, 0, 0, 0.74), rgba(226, 0, 0, 0.74) ), url('../img/training/2.jpg') no-repeat center
+@keyframes animA
+  0%
+    opacity: 0
+    left: -100%
+  12.5%, 100%
+    opacity: 1
+    left: 0
+@keyframes animB
+  0%,
+  12.5%
+    opacity: 0
+    top: -100%
+  23%, 100%
+    opacity: 1
+    top: 0
+@keyframes animC
+  0%, 23%
+    opacity: 0
+    top: -100%
+  35.5%, 100%
+    opacity: 1
+    top: 0
+@keyframes animD
+  0%, 35.5%
+    opacity: 0
+    bottom: -100%
+  48%, 100%
+    opacity: 1
+    bottom: 0
+@keyframes animE
+  0%, 48%
+    opacity: 0
+    top: -100%
+  60.5%, 100%
+    opacity: 1
+    top: 0
+@keyframes animL
+  0%, 60.5%
+    opacity: 0
+    top: -100%
+  72.5%, 100%
+    opacity: 1
+    top: 0
+@keyframes animK
+  0%, 72.5%
+    opacity: 0
+    bottom: -100%
+  85%, 100%
+    opacity: 1
+    bottom: 0
+@keyframes animM
+  0%, 85%
+    opacity: 0
+    left: -100%
+  100%
+    opacity: 1
+    left: 0
+
 
 .a, .b, .c, .d, .e, .l, .k, .m
   position: relative
@@ -758,9 +867,8 @@ label
     flex-direction: column
     justify-content: flex-start
     z-index: 1
-    bottom: -100%
     width: 100%
-    left: 0
+    opacity: 0
     color: #000
     height: 100%
     transition: 0.3s ease
@@ -770,6 +878,7 @@ label
       color: #fff
       margin: 20px 0
     .title
+      font-family: MerriweatherBold
       text-transform: uppercase
       margin-top: 0
       color: $ac-color
@@ -780,18 +889,24 @@ label
     > .title
       opacity: 0
     .extraText
-      bottom: 0
+      opacity: 1
     .bgImage
       transform: scale(1)
   .bgImage
     background-size: cover
-  .title
-    transition: 0.3s ease
-    margin-top: 1em
+  > .title
+    position: relative
+    font-family: MerriweatherBold
+    font-weight: bold
+    transition: 0.3s ease-in
     color: #fff
+    height: 100%
     opacity: 1
+    display: flex
     text-align: center
-    font-size: 24px
+    align-items: center
+    justify-content: center
+    font-size: 55px
 .bgImage
   position: absolute
   transition: 0.5s ease
@@ -801,9 +916,27 @@ label
   z-index: -1
   transform: scale(1.1)
   height: 100%
-
-
-
+//Lobster, Comfort, Marmelad - bottom te,
+//  Merriweather, MerriweatherBold - good,
+//  Pattaya, RobotoSlabBold - good, RobotoSlab,
+//  Rubik, Ruso - alay good, TenorSans, Yanone, YanoneBold, Yeseva - good
+.training
+  h2
+    font-family: MerriweatherBold
+.trainingContent
+  background-color: #ffffff
+  margin-bottom: 30px
+  .title
+    opacity: 1
+    font-family: MerriweatherBold
+    margin: 100px 0
+    color: #000
+    span
+      color: $ac-color
+.textAccent
+  font-family: MerriweatherBold
+  margin-bottom: 30px
+  font-size: 24px
 
 @import fonts
 @import media

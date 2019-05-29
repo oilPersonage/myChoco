@@ -5,6 +5,8 @@ const clickFunction = (el, func) => {
 }
 
 if (document.querySelector('#photograph')) {
+  const arrPhoto = document.querySelectorAll('[data-smallImg]')
+
   const itemPhoto = document.querySelectorAll('.itemPhoto')
   const photoCenter = document.querySelector('#imgPhotoCenter')
   const aRR = document.querySelector('#arRR')
@@ -79,10 +81,9 @@ if (document.querySelector('#photograph')) {
 
   const clickImage = (e) => {
     const {target} = e
-    const src = target.getAttribute('src')
-    const newSrc = src.replace('/small', '')
+    const src = target.getAttribute('data-bigImg')
     modal.classList.add('show')
-    imgModal.setAttribute('src', newSrc)
+    imgModal.setAttribute('src', src)
   }
 
   // let scale = 1;
@@ -128,7 +129,8 @@ if (document.querySelector('#photograph')) {
 
   modal.addEventListener('click', (e) => {
     console.log()
-    if (e.target === modal) {
+    // if (e.target === modal) {
+      imgModal.setAttribute('src', '#')
       modal.classList.remove('show')
       // scale = 1
       // imgModal.style.position = 'relative'
@@ -138,7 +140,7 @@ if (document.querySelector('#photograph')) {
       //
       // imgModal.onmousemove = null;
       // imgModal.onmouseup = null;
-    }
+    // }
   })
   clickFunction(photoBox, clickImage)
 
@@ -151,5 +153,16 @@ if (document.querySelector('#photograph')) {
   }
 
   clickFunction(linkTo, clickToScroll)
+
+
+  //Lazy Load
+
+  const LazyLoad = () => {
+    for (let i =0; i<arrPhoto.length; i++) {
+      console.log(arrPhoto[i].getAttribute('data-smallImg'))
+      arrPhoto[i].setAttribute('src', arrPhoto[i].getAttribute('data-smallImg'))
+    }
+  }
+  LazyLoad()
 
 }

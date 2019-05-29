@@ -47,6 +47,8 @@ window.interval;
   window.intervalAnim()
   
   dotClick = (index) => {
+    console.log({index, fromDot})
+    if (index - 1 === fromDot) return
     hideMenu()
     clearTimeout(interval)
     window.intervalAnim()
