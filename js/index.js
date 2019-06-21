@@ -5,6 +5,7 @@ import './pubsub'
 import './carousel'
 import './humburger'
 import './photo'
+import './training'
 import './pixiDepth'
 
 
