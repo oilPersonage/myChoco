@@ -1,3 +1,38 @@
+import n1 from '../img/photo/neon/1.jpg'
+import n2 from '../img/photo/neon/2.jpg'
+import n3 from '../img/photo/neon/8.jpg'
+import n4 from '../img/photo/neon/3.jpg'
+import n5 from '../img/photo/neon/6.jpg'
+import n6 from '../img/photo/neon/9.jpg'
+import n7 from '../img/photo/neon/10.jpg'
+import n8 from '../img/photo/neon/4.jpg'
+import n9 from '../img/photo/neon/5.jpg'
+import n10 from '../img/photo/neon/12.jpg'
+
+import st1 from '../img/photo/street/1.jpg'
+import st2 from '../img/photo/street/3.jpg'
+import st3 from '../img/photo/street/4.jpg'
+import st4 from '../img/photo/street/15.jpg'
+import st5 from '../img/photo/street/11.jpg'
+import st6 from '../img/photo/street/5.jpg'
+import st7 from '../img/photo/street/6.jpg'
+import st8 from '../img/photo/street/12.jpg'
+import st9 from '../img/photo/street/9.jpg'
+import st10 from '../img/photo/street/я.jpg'
+
+import s1 from '../img/photo/studio/1.jpg'
+import s2 from '../img/photo/studio/4.jpg'
+import s3 from '../img/photo/studio/11.jpg'
+import s4 from '../img/photo/studio/13.jpg'
+import s5 from '../img/photo/studio/12.jpg'
+import s6 from '../img/photo/studio/7.jpg'
+import s7 from '../img/photo/studio/6.jpg'
+import s8 from '../img/photo/studio/9.jpg'
+import s9 from '../img/photo/studio/10.jpg'
+import s10 from '../img/photo/studio/13.jpg'
+
+
+
 const clickFunction = (el, func) => {
   for (let i = 0; i < el.length; i++) {
     el[i].addEventListener('click', func)
@@ -5,6 +40,10 @@ const clickFunction = (el, func) => {
 }
 
 if (document.querySelector('#photograph')) {
+  const bigPhotos = {st1, st2, st3, st4, st5, st6, st7, st8, st9, st10,
+    s1, s2, s3, s4, s5, s6, s7, s8,s9, s10,
+    n1, n2, n3, n4, n5, n6, n7, n8, n9, n10
+  }
   const arrPhoto = document.querySelectorAll('[data-smallImg]')
 
   const itemPhoto = document.querySelectorAll('.itemPhoto')
@@ -83,7 +122,7 @@ if (document.querySelector('#photograph')) {
     const {target} = e
     const src = target.getAttribute('data-bigImg')
     modal.classList.add('show')
-    imgModal.setAttribute('src', src)
+    imgModal.setAttribute('src', bigPhotos[src])
   }
 
   // let scale = 1;
@@ -165,4 +204,11 @@ if (document.querySelector('#photograph')) {
   }
   LazyLoad()
 
+}
+document.body.onscroll = function() {
+  const pageY = window.pageYOffset || document.documentElement.scrollTop;
+  const windowH = document.documentElement.clientHeight;
+  const pageH = document.body.clientHeight;
+  const percent = pageY * 100 / (pageH - windowH)
+  document.querySelector('.progressBG').style.width = percent + '%'
 }

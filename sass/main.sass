@@ -7,19 +7,19 @@ $text-color: rgba(#000, 0.9)
 
 // CUSTOM SCROLL
 ::-webkit-scrollbar
-  width: 3px
-  height: 0
-/* Track */
-::-webkit-scrollbar-track
-  background: #000
-
-/* Handle */
-::-webkit-scrollbar-thumb
-  background: $ac-color
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover
-  background: $ac-color
+  width: 0
+//  height: 0
+///* Track */
+//::-webkit-scrollbar-track
+//  background: #000
+//
+///* Handle */
+//::-webkit-scrollbar-thumb
+//  background: $ac-color
+//
+///* Handle on hover */
+//::-webkit-scrollbar-thumb:hover
+//  background: $ac-color
 
 *
   margin: 0
@@ -93,7 +93,7 @@ nav
   flex-direction: column
   width: 100%
   .item.active
-    //background-color: $ac-color
+    background-color: $ac-color
   .item
     left: -50px
     padding: 18px 45px 15px 35px
@@ -114,7 +114,7 @@ nav
       z-index: -1
       height: 100%
       transition: 0.15s ease-in-out
-      background-color: rgba($ac-color, 0.6)
+      background-color: $ac-color
       box-shadow: inset 0 0 3px rgba(0, 0, 0,.2)
     &:hover
       color: #fff
@@ -691,6 +691,7 @@ label
 
 // TRAINING
 .trainingGrid
+  //margin-top: 5px
   padding: 5px
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr
@@ -699,7 +700,7 @@ label
   grid-column-gap: 5px
   grid-row-gap: 5px
   width: 100vw
-  height: 100vh
+  height: calc(100vh - 5px)
 
 .a
   > .title
@@ -937,6 +938,28 @@ label
   font-family: MerriweatherBold
   margin-bottom: 30px
   font-size: 24px
+.progressBar
+  width: 100%
+  height: 5px
+  background-color: transparent
+  position: fixed
+  z-index: 11
+  top: 0
+.progressBG
+  height: 100%
+  width: 0
+  background-color: $ac-color
+.training
+  .progressBar
+    background: #fff
+.canvasBox
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 2
+
 
 @import fonts
 @import media
