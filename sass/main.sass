@@ -1,5 +1,6 @@
 $ac-color: #fd33bd
 $ac-color2: #fd5829
+$ac-color3: #fdd3f0
 $w-color: #fff
 $dop-color: rgba(255, 255, 255, .3)
 $text-color: rgba(#000, 0.9)
@@ -288,8 +289,10 @@ nav
 .carouselItem.active .carouselText
     h2
       position: relative
+      z-index: 2
       animation: animationHeaderText 0.5s cubic-bezier(0,.73,.47,1) 1s forwards
     p
+      z-index: 2
       animation: animationHeaderBText 0.5s cubic-bezier(0,.73,.47,1) 1.5s forwards
     a
       animation: animationLink 0.5s cubic-bezier(0,.73,.47,1) 2s forwards
@@ -973,7 +976,7 @@ label
 .trainingBigBox
   display: flex
   justify-content: space-between
-  margin-bottom: 200px
+  margin-bottom: 100px
 .svgFilter
   max-height: 0
 .trainingPhoto
@@ -990,11 +993,11 @@ label
   filter: url("#shadowed-goo")
   li
     padding: 10px 15px
-    background-color: $ac-color2
+    background-color: $ac-color3
     margin: 10px 0
     font-family: Comfort
     width: max-content
-    color: $w-color
+    color: $text-color
     border-radius: 20px
     position: relative
     &:hover
@@ -1010,8 +1013,10 @@ label
       width: 0px
       height: 20px
       border-radius: 50%
-      background-color: $ac-color2
+      background-color: $ac-color3
 
+.photoScrollBottom
+  display: none
 
 @import fonts
 @import media

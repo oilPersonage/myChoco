@@ -1,3 +1,31 @@
+@media screen and (max-width: 1600px)
+  .photoPackage .itemPhoto .smallBox .contentPhoto .contentPhotoBody
+    max-width: 800px
+    text-align: center
+  .default h2
+    margin-left: -35%
+  .default .contentPhotoBody
+      margin-left: 8%
+  .premium
+    img
+      transform: translateX(0%) !important
+  .premium.active
+    img
+      transform: translateX(-10%) !important
+  .gold
+    h2
+      margin-left: 35%
+    img
+      transform: translateX(30%) !important
+  .gold.active
+    img
+      transform: translateX(0) !important
+@media screen and (max-width: 1440px)
+  .default h2
+    margin-left: -30%
+  .gold
+    h2
+      margin-left: 38%
 @media screen and (max-width: 1366px)
   h1
     font-size: 40px
@@ -6,7 +34,66 @@
     padding-right: 100px
     p
       font-size:  18px
+  .default
+    .contentPhotoBody
+      margin-left: 5%
+@media screen and (max-width: 1024px)
+  .photoScrollBottom
+    display: block
+  .arrowBoxPhoto
+    display: none
+  .photoPackage
+    height: 100%
+    overflow: auto
+    flex-direction: column
+    .itemPhoto
+      height: 100vh
+      clip-path: none !important
+      position: relative
+      .smallBox
+        height: 100%
+        img
+          transform: translateX(0) !important
+          height: 100%
+        .contentPhoto
+          display: flex
+          align-items: flex-start
+          justify-content: center
+          flex-direction: column
+          padding: 30px 60px
+          background-color: rgba(0,0,0,.8)
+          h2
+            text-align: left
+            margin: 0 0 60px
+            font-size: 48px !important
+          .contentPhotoBody
+            margin-left: 0
+            margin-top: 60px
+            font-size: 18px
+            opacity: 1
+            text-align: left
+            right: 0
+            max-width: 100% !important
 @media screen and (max-width: 988px)
+  .noHome
+    top: 0px
+    background-color: #000
+    padding: 20px 0
+    a
+      top: 22px
+  .photoScrollBottom
+    z-index: 6
+  .photoBox
+    column-count: 2
+    .item
+      margin-bottom: 3px
+      border: none
+  .modalPhoto.show
+    img
+      height: auto
+      width: 90%
+      position: relative
+      z-index: 11
   .carouselItem.active .carouselText
     h1
       top: 0
@@ -66,8 +153,12 @@
     height: 5px
   h1
     font-size: 24px
+  h2
+    font-size: 20px
   .carouselText
     text-align: center
+    .title
+      font-size: 28px
   .linkHome
     left: 0
     padding-left: 25px
@@ -90,3 +181,47 @@
     font-size: 18px
   label
     top: -9px
+  .photoPackage
+    .itemPhoto
+      .smallBox
+        img
+          transform: translateX(-40%) !important
+        .contentPhoto
+          padding: 15px 15px
+          align-items: center
+          h2
+            text-align: left
+            font-size: 20px !important
+            margin-bottom: 0
+          .contentPhotoBody
+            align-items: center
+            display: flex
+            flex-direction: column
+            margin-top: 30px
+            p
+              font-size: 14px
+              padding-left: 30px
+              position: relative
+              &:first-child
+                &:before
+                  top: 10px
+              &:before
+                content: ''
+                position: absolute
+                height: 7px
+                width: 7px
+                background-color: $ac-color
+                top: 3px
+                border-radius: 50%
+                left: 10px
+              .accentP
+                font-size: 18px
+            .pricePhoto
+              font-size: 20px !important
+              span
+                font-size: 14px
+              margin-top: 15px
+              &:nth-child(5)
+                margin-top: 0
+            .showPhoto
+              margin-top: 25px

@@ -6,7 +6,7 @@ import './carousel'
 import './humburger'
 import './photo'
 import './training'
-import './pixiDepth'
+// import './pixiDepth'
 
 
 import '../sass/main.sass'
