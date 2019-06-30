@@ -27,6 +27,10 @@
     h2
       margin-left: 38%
 @media screen and (max-width: 1366px)
+  .trainingGrid
+    .item
+      .title
+        font-size: 30px
   h1
     font-size: 40px
   .carouselText
@@ -38,6 +42,66 @@
     .contentPhotoBody
       margin-left: 5%
 @media screen and (max-width: 1024px)
+  .trainingGrid
+    grid-template-areas: 'a a c c' 'd b c c' 'e e k m' 'e e k m'
+    .item
+      .title
+        font-size: 100%
+  .trainingContent
+    overflow: hidden
+    padding: 0 60px
+    > div
+      width: 100%
+    p
+      max-width: 100%
+      font-size: 14px
+      margin-bottom: 50px
+      text-align: center
+    .title
+      text-align: center
+      font-size: 30px
+      padding-bottom: 50px
+
+  .trainingBigBox.reverse
+    flex-direction: column-reverse
+  .trainingBigBox
+    margin-bottom: -100px
+    position: relative
+    display: flex
+    flex-direction: column
+    > div
+      position: relative
+      z-index: 2
+    .trainingPhoto
+      right: -50%
+      transform: translateX(-50%)
+      max-width: 500px
+      width: 100%
+      height: 500px
+      position: relative
+      top: -150px
+      //bottom: -25%
+      z-index: 1
+    .trainingPhoto.b30
+      bottom: -40%
+  .trainingContent .title.r
+    text-align: center
+  .preim
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    li
+      font-size: 14px
+      background-color: $w-color
+      text-align: center
+      > div
+        background-color: $w-color
+  .preim.left
+    align-items: center
+  .textAccent
+    text-align: center
+    font-size: 18px
   .photoScrollBottom
     display: block
   .arrowBoxPhoto
@@ -61,7 +125,7 @@
           justify-content: center
           flex-direction: column
           padding: 30px 60px
-          background-color: rgba(0,0,0,.8)
+          background-color: rgba(0,0,0,.9)
           h2
             text-align: left
             margin: 0 0 60px
@@ -99,9 +163,6 @@
       top: 0
     p
       left: 0
-    h1, p
-      opacity: 1
-      animation: none
 
   .carouseItemBox
     img
@@ -155,10 +216,15 @@
     font-size: 24px
   h2
     font-size: 20px
+  .carouselItem
+    img.right
+      transform: translateX(-69%)
+  .linkTo
+    font-size: 16px
   .carouselText
     text-align: center
     .title
-      font-size: 28px
+      font-size: 20px
   .linkHome
     left: 0
     padding-left: 25px
@@ -225,3 +291,27 @@
                 margin-top: 0
             .showPhoto
               margin-top: 25px
+  .trainingGrid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(7, 1fr)
+    grid-template-areas: 'a' 'b' 'c' 'd'  'e'  'k'  'm'
+    .item
+      &:hover
+        .title
+          opacity: 1
+      .extraText
+        display: none
+  .trainingContent
+    padding: 0 30px
+  .trainingBigBox
+    margin-bottom: 0
+  .trainingBigBox .trainingPhoto
+    top: 0
+    height: 300px
+    width: 300px
+  .preim li
+    width: auto
+    padding: 10px 15px
+    background-color: $ac-color3
+    > div
+      background-color: $ac-color3

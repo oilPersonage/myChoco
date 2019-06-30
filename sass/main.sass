@@ -216,6 +216,8 @@ nav
   overflow: hidden
   height: 100vh
   display: inline-block
+.carouselItem.active
+  z-index: 2
 .carouselItem
   width: 100vw
   position: absolute
@@ -699,7 +701,7 @@ label
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr
   grid-template-rows: 1fr 1fr 1fr 1fr
-  grid-template-areas: 'a b c c' 'a d c c' 'e e l m' 'e e k m'
+  grid-template-areas: 'a b c c' 'a d c c' 'e e k m' 'e e k m'
   grid-column-gap: 5px
   grid-row-gap: 5px
   width: 100vw
@@ -943,7 +945,7 @@ label
     opacity: 1
     font-family: MerriweatherBold
     padding: 100px 0
-    color: #000
+    color: $ac-color2
     span
       color: $ac-color
 .ta-r
@@ -994,7 +996,7 @@ label
   li
     padding: 10px 15px
     background-color: $ac-color3
-    margin: 10px 0
+    margin: 0
     font-family: Comfort
     width: max-content
     color: $text-color
@@ -1014,9 +1016,40 @@ label
       height: 20px
       border-radius: 50%
       background-color: $ac-color3
+.preim.left
+  display: flex
+  flex-direction: column
+  align-items: flex-end
 
 .photoScrollBottom
   display: none
+.arrowToTop.show
+  bottom: 30px
+.arrowToTop
+  position: fixed
+  bottom: -100px
+  transition: 0.3s ease-out
+
+  right: 30px
+  width: 50px !important
+  height: 50px
+  z-index: 11
+  border-radius: 30px
+  background-color: rgba(0,0,0,0.1)
+  cursor: pointer
+  &:after
+    content: ''
+    position: absolute
+    top: calc(50% - 5px)
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 30px
+    width: 30px
+    background-color: $ac-color
+    clip-path: polygon(85% 100%, 50% 60%, 15% 100%, 0 85%, 50% 30%, 100% 85%)
+    //border: 15px solid transparent
+    //box-sizing: border-box
+    //border-bottom: 20px solid $ac-color
 
 @import fonts
 @import media

@@ -7,7 +7,7 @@ import './humburger'
 import './photo'
 import './training'
 // import './pixiDepth'
-
+import './indexLazy'
 
 import '../sass/main.sass'
 
