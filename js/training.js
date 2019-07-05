@@ -33,4 +33,19 @@ if (document.body.classList.contains('training')) {
     })
   })
 
+
+  const arrCard = document.querySelectorAll('.trainingPrice .item')
+
+  const hoverCard = (e, out) => {
+    console.log(e, out)
+    e.classList.add(out ? 'out': 'hover')
+    e.classList.remove(out ? 'hover': 'out')
+  }
+
+
+  for (let l = 0; l < arrCard.length; l++) {
+    arrCard[l].addEventListener('mouseenter', () => hoverCard(arrCard[l]))
+    arrCard[l].addEventListener('mouseleave', () => hoverCard(arrCard[l], 'not'))
+  }
+
 }
