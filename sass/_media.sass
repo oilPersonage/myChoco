@@ -29,8 +29,17 @@
 @media screen and (max-width: 1366px)
   .trainingGrid
     .item
-      .title
+      font-size: 14px
+      > .title
         font-size: 30px
+      .extraText
+        padding: 15px
+        .title
+          margin: 5px 0
+  .trainingPrice
+    margin: 0 15px
+    .item
+      margin: 0 10px
   h1
     font-size: 40px
   .carouselText
@@ -42,6 +51,27 @@
     .contentPhotoBody
       margin-left: 5%
 @media screen and (max-width: 1024px)
+  .trainingPrice
+    padding-top: 100px
+    padding-bottom: 30px
+    .container
+      flex-direction: column
+      align-items: center
+      justify-content: center
+    .item
+      box-shadow: 0 5px 10px rgba(0,0,0,.05)
+      top: 0 !important
+      min-height: 500px
+      max-width: 325px
+      margin-bottom: 30px
+      transform: none!important
+    .front, .back
+      font-size: 14px
+      .extraTitle
+        font-size: 16px
+        margin: 25px 0 15px
+    .title
+      margin-bottom: 10px !important
   .trainingGrid
     grid-template-areas: 'a a c c' 'd b c c' 'e e k m' 'e e k m'
     .item
@@ -60,7 +90,7 @@
     .title
       text-align: center
       font-size: 30px
-      padding-bottom: 50px
+      padding-bottom: 30px
 
   .trainingBigBox.reverse
     flex-direction: column-reverse
@@ -139,6 +169,9 @@
             right: 0
             max-width: 100% !important
 @media screen and (max-width: 988px)
+  .absoluteDescription
+    display: block
+
   .noHome
     top: 0px
     background-color: #000
@@ -209,6 +242,10 @@
     position: relative
     z-index: 13
 @media screen and (max-width: 600px)
+  .trainingContent p
+    margin-bottom: 30px
+  .textAccent
+    margin-bottom: 15px
   .carouselDotItem > div
     width: 5px
     height: 5px
@@ -307,11 +344,12 @@
     margin-bottom: 0
   .trainingBigBox .trainingPhoto
     top: 0
+    display: none
     height: 300px
     width: 300px
   .preim li
     width: auto
     padding: 10px 15px
-    background-color: $ac-color3
+    //background-color: $ac-color3
     > div
-      background-color: $ac-color3
+      //background-color: $ac-color3
