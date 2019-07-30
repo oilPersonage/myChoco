@@ -26,15 +26,15 @@ if (document.querySelector('#home')) {
     hideMenu(t - 1)
   }
 
-  for (let i = 0; i < scrollItem.length; i++) {
-    const dotScroll = document.createElement('div')
-    dotScroll.classList.add('scrollClick')
-    rightDotsAbs.style.height = `calc(100% / ${scrollItem.length})`
-    if (i === 0) dotScroll.classList.add('active')
-    // dotScroll.addEventListener('click', () => pubClick(i + 1))
-    // dotScroll.innerHTML = i + 1
-    dotsBox.appendChild(dotScroll)
-  }
+  // for (let i = 0; i < scrollItem.length; i++) {
+  //   const dotScroll = document.createElement('div')
+  //   dotScroll.classList.add('scrollClick')
+  //   rightDotsAbs.style.height = `calc(100% / ${scrollItem.length})`
+  //   if (i === 0) dotScroll.classList.add('active')
+  //   // dotScroll.addEventListener('click', () => pubClick(i + 1))
+  //   // dotScroll.innerHTML = i + 1
+  //   dotsBox.appendChild(dotScroll)
+  // }
 
 
 // publish a topic asynchronously
