@@ -41,7 +41,7 @@ window.interval;
         if (window.from !== 1) return
         dotClick(window.fromDot + 2)
       }
-    }, 6000)
+    }, 10000)
   }
 
   window.intervalAnim()
