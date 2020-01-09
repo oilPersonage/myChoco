@@ -552,7 +552,7 @@ label
           position: relative
           color: #fff
           opacity: 0
-          right: -300px
+          right: -100px
 
           p
             margin-bottom: 20px
@@ -581,13 +581,11 @@ label
           background-color: rgba(0, 0, 0, .8)
 
           .contentPhotoBody
-            //opacity: 1
-            //top: 0
-            animation: pAnimationPhoto 0.5s ease-in 1s forwards
+            animation: pAnimationPhoto 0.3s ease-in 1s forwards
 
 @keyframes pAnimationPhoto
   0%
-    right: -300px
+    right: -100px
     opacity: 0
   100%
     right: 0
@@ -595,7 +593,7 @@ label
 
 @keyframes photoBodyCenter
   0%
-    top: -200px
+    top: -100px
     opacity: 0
   100%
     top: 0
@@ -603,7 +601,7 @@ label
 
 @keyframes photoBodyRight
   0%
-    left: -300px
+    left: -100px
     opacity: 0
   100%
     left: 0
@@ -660,7 +658,7 @@ label
     //.smallBox
     //  .contentPhoto
     .contentPhotoBody
-      animation: photoBodyCenter 0.5s ease 1s forwards !important
+      animation: photoBodyCenter 0.3s ease 1s forwards !important
 
   .contentPhotoBody
     margin: 0 auto
@@ -688,7 +686,7 @@ label
 
   &.active
     .contentPhotoBody
-      animation: photoBodyRight 0.5s ease 1s forwards !important
+      animation: photoBodyRight 0.3s ease 1s forwards !important
 
     .smallBox
       .contentPhoto
