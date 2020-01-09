@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "",
   "scripts": {
-    "build": "webpack --mode=development",
+    "build": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --open",
     "bundle": "npm install && npm run watch",
     "production": "cross-env NODE_ENV=production webpack --mode=production",

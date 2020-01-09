@@ -20,7 +20,7 @@ const config = {
     rules: [
       {
         test: /\.(scss|sass|css)$/i,
-        use: ['style-loader',MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.html/,
@@ -83,17 +83,17 @@ const config = {
     new HtmlWebpackPlugin({
       template: './html/index.html',
       filename: 'index.html',
-      // favicon: './html/images/favicon.ico',
+      favicon: './img/favicon.png',
     }),
     new HtmlWebpackPlugin({
       template: './html/photograph.html',
       filename: 'photograph.html',
-      // favicon: './html/images/favicon.ico',
+      favicon: './img/favicon.png',
     }),
     new HtmlWebpackPlugin({
       template: './html/training.html',
       filename: 'training.html',
-      // favicon: './html/images/favicon.ico',
+      favicon: './img/favicon.png',
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
