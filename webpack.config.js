@@ -95,6 +95,11 @@ const config = {
       filename: 'training.html',
       favicon: './img/favicon.png',
     }),
+    new HtmlWebpackPlugin({
+      template: './html/about.html',
+      filename: 'about.html',
+      favicon: './img/favicon.png',
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),

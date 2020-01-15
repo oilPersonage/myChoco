@@ -120,6 +120,9 @@ nav
     &:nth-child(3)
       transition: 0.15s ease-in-out 0.20s
 
+    &:nth-child(4)
+      transition: 0.15s ease-in-out 0.30s
+
     &:hover
       opacity: 1
 
@@ -338,10 +341,10 @@ nav
 
 @keyframes animationHeaderText
   0%
-    top: -100px
+  top: -100px
     opacity: 0
   100%
-    top: 0
+  top: 0
     opacity: 1
 
 @keyframes animationHeaderBText
@@ -593,10 +596,10 @@ label
 
 @keyframes photoBodyCenter
   0%
-    top: -100px
+  top: -100px
     opacity: 0
   100%
-    top: 0
+  top: 0
     opacity: 1
 
 @keyframes photoBodyRight
@@ -969,18 +972,18 @@ label
   0%,
   12.5%
     opacity: 0
-    top: -100%
+  top: -100%
   23%, 100%
     opacity: 1
-    top: 0
+  top: 0
 
 @keyframes animC
   0%, 23%
     opacity: 0
-    top: -100%
+  top: -100%
   35.5%, 100%
     opacity: 1
-    top: 0
+  top: 0
 
 @keyframes animD
   0%, 35.5%
@@ -993,18 +996,18 @@ label
 @keyframes animE
   0%, 48%
     opacity: 0
-    top: -100%
+  top: -100%
   60.5%, 100%
     opacity: 1
-    top: 0
+  top: 0
 
 @keyframes animL
   0%, 60.5%
     opacity: 0
-    top: -100%
+  top: -100%
   72.5%, 100%
     opacity: 1
-    top: 0
+  top: 0
 
 @keyframes animK
   0%, 72.5%
@@ -1408,6 +1411,24 @@ label
   max-width: 1170px
   margin: 0 auto
   display: flex
+#about
+  height: auto
+.sectionCanvas
+  display: flex
+#threeCanvas
+  flex: 1
+.absoluteBox
+  position: absolute
+  max-height: 100vh
+  width: 100vw
+  top: 0
+  z-index: 2
+  left: 0
+  overflow: scroll
+  > div
+    width: 100%
+    height: 3000px
+
 
 @import fonts
 @import media
