@@ -1,21 +1,18 @@
 import Block from './three/block'
 const about = document.querySelector('#about')
 
+import img1 from '../img/about/1.jpg'
+import img2 from '../img/about/2.jpg'
+import img3 from '../img/about/3.jpg'
+
 if (about) {
 
   const canvas = document.querySelector('#threeCanvas')
   const absoluteBox = document.querySelector('.absoluteBox')
   const width = window.innerWidth
   const height = window.innerHeight
+  const heightContainer = 2048
   let speed = 0
-
-  // const blocks = [
-  //   { x: 1, y: 10, height: 1, width: 1, factor: 0.7, color: 'rgb(50, 105, 10)' },
-  //   { x: 3, y: 3, height: 1, width: 1, factor: 0.5, color: 'rgb(105, 50, 0)' },
-  //   { x: 5, y: 5, height: 1, width: 1, factor: 0.3, color: 'rgb(10, 50, 105)' },
-  // ]
-
-  // const arrBlock = blocks.map(block => Block({ ...block }))
   const renderer = new THREE.WebGLRenderer({ canvas });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(width, height);
@@ -24,32 +21,42 @@ if (about) {
   camera.zoom = 1;
 
   const scene = new THREE.Scene();
-  // arrBlock.forEach(el => {
-  //   console.log(el.position)
-  //   scene.add(el)
-  // })
-  // var axesHelper = new THREE.AxesHelper(5);
-  // scene.add(axesHelper);
+
+
+
+  // lines
+
+  const line = new THREE.PlaneGeometry(width * 1.5, height / 2, 0 );
+  const materialLine = new THREE.MeshBasicMaterial( {color: 'rgb(30, 10, 30)', side: THREE.DoubleSide} );
+  const planeLine = new THREE.Mesh( line, materialLine );
+  planeLine.position.set(width / 2, 400, 0)
+  planeLine.rotation.set(0, 0, -0.5);
+  console.log(planeLine)
+  scene.add( planeLine );
 
   const loader = new THREE.TextureLoader();
+  const raz =  1920 / 1280
+  const widthTexture = width / 3
+  const heightTexture = height / 3 * raz
   const textures = [
-    { texture: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-1.jpg'), x: 1, y: 1 },
-    { texture: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-1.jpg'), x: 200, y: 200 },
-    { texture: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-1.jpg'), x: 500, y: 400 }
+    { texture: loader.load(img1), x: width * 0.2, y: heightContainer * 0.17, height: heightTexture, width: widthTexture },
+    { texture: loader.load(img2), x: width * 0.7, y: heightContainer * 0.7, width: heightTexture, height:  widthTexture},
+    { texture: loader.load(img3), x: width * 0.2, y: heightContainer * 1.17, height: heightTexture , width: widthTexture }
   ];
   const planeSize = 256;
-  const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
   const planes = textures.map((element) => {
+    const planeGeo = new THREE.PlaneBufferGeometry(element.width, element.height);
     const planePivot = new THREE.Object3D();
     scene.add(planePivot);
-    element.texture.magFilter = THREE.NearestFilter;
+    element.texture.wrapS = THREE.RepeatWrapping;
+    element.texture.wrapT = THREE.RepeatWrapping;
+    element.texture.repeat.y = - 1;
     const planeMat = new THREE.MeshBasicMaterial({
       map: element.texture,
       side: THREE.DoubleSide,
     });
     const mesh = new THREE.Mesh(planeGeo, planeMat);
     planePivot.add(mesh);
-    // move plane so top left corner is origin
     mesh.position.set(planeSize / 2 + element.x, planeSize / 2 + element.y, 0);
     return planePivot;
   });
@@ -60,18 +67,14 @@ if (about) {
     camera.updateProjectionMatrix();
   }
   resize()
-
-  const onScroll = (e) => {
-    // if ((time * 0.1) % 10 === 0) pageXOld = absoluteBox.scrollTop
-  }
-
-  absoluteBox.addEventListener('scroll', (e) => onScroll(e))
   function animate(time) {
     time *= 0.001
     speed += 0.05 * (absoluteBox.scrollTop - speed)
     planes.forEach((plane, ndx) => {
-      plane.position.y = 1 + (speed * ndx)
+      plane.position.y = 1 - speed
     })
+
+    planeLine.position.y =  speed
 
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
