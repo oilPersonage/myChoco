@@ -99,7 +99,6 @@ if (about) {
 
   absoluteBox.addEventListener('scroll', () => scrollTop = absoluteBox.scrollTop)
 
-  console.log(planeLine)
   function animate() {
     time += 0.1
     speed += 0.1 * (absoluteBox.scrollTop - speed)
@@ -108,7 +107,7 @@ if (about) {
       scrollTopOld = scrollTop
       plane.material.uniforms.time.value = time;
       plane.material.uniforms.shift.value = l;
-      plane.material.uniforms.scale.value = l;
+      plane.material.uniforms.scale.value = l * 2;
       plane.position.y = textures[ndx].y + speed / 2048 * 5
     })
     planeLine.material.uniforms.shift.value = l;
