@@ -32,6 +32,10 @@ const config = {
         loader: 'babel-loader',
       },
       {
+        test: /\.(glsl|vs|fs)$/,
+        loader: 'shader-loader',
+      },
+      {
         test: /\.(png|gif|jpg|jpeg)$/,
         use: [
           {
